@@ -14,7 +14,7 @@ router.post('/ninjas',function(req,res,next){
 });
 
 router.put('/ninjas/:id',function(req,res,next){
-    User.findByIdAndUpdate({emailId: req.params.id}, req.body).then(function(){
+    User.findOneAndUpdate({emailId: req.params.id}, req.body).then(function(){
         User.findOne({emailId: req.params.id}).then(function(user){
             res.send(user);
         });
