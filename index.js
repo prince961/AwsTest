@@ -22,7 +22,8 @@ const dbURI = 'mongodb://prince961:samepassword@cluster0-shard-00-00-vpjsz.mongo
 const options = {
   reconnectTries: Number.MAX_VALUE,
   poolSize: 10,
-  dbName: 'Users'
+  dbName: 'Users',
+  useNewUrlParser: true
 };
 
 mongoose.connect(dbURI, options).then(
@@ -56,7 +57,7 @@ app.use(function(err, req, res, next){
 });
 
 
-app.listen(process.env.port || 4000, function(){
+app.listen(4000, function(){
     console.log('now listening for requests');
 });
 /*
@@ -71,3 +72,4 @@ app.listen(process.env.port || 4000, () => {
     });
 });
 */
+
