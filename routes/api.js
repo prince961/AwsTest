@@ -15,6 +15,18 @@ User.findOne({emailId: req.params.id}).then(function(user){
 });
 });
 
+router.get('/checkExistingUser/:id',function(req,res){
+    User.findOne({emailId: req.params.id}).then(function(user){
+    
+        if(user== null){
+            res.send({userAlreadyInDB: false});
+        }else{
+            res.send({userAlreadyInDB: true});
+        }
+        console.log(user);
+    });
+    });
+
 router.post('/ninjas',function(req,res,next){
     User.create(req.body).then(function(user){
         res.send(user);
@@ -25,6 +37,7 @@ router.put('/ninjas/:id',function(req,res,next){
     User.findOneAndUpdate({emailId: req.params.id}, req.body).then(function(){
         User.findOne({emailId: req.params.id}).then(function(user){
             res.send(user);
+            
         });
     }).catch(next);
 });
