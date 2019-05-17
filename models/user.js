@@ -18,6 +18,18 @@ const userSchema = new Schema({
         type: String,
         required: [true,'BHK ID is required']
     },
+    address:{
+        type: String,
+        required: [false,'address is not mandatory']
+    },
+    latitude:{
+        type: String,
+        required: [false,'latitude is not mandatory']
+    },
+    longitude:{
+        type: String,
+        required: [false,'longitude is not mandatory']
+    },
     roomArray : 
     [{
         
