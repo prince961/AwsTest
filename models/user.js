@@ -16,7 +16,7 @@ const userSchema = new Schema({
     },
     bhkId:{
         type: String,
-        required: [true,'BHK ID is required']
+        required: [false,'BHK ID is required']
     },
     address:{
         type: String,
