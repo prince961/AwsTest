@@ -43,7 +43,7 @@ const userSchema = new Schema({
         },
         roomId:{
             type: Number,
-            required: [true,'roomID is required']
+            required: [false,'roomID is required']
         },
         pingFoxDeviceList:
         [{
