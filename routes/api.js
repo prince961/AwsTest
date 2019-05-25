@@ -4,9 +4,9 @@ const User = require('../models/user');
 
 //get a list of ninjas from database
 
-//router.get('/ninjas',function(req,res){
-  //  res.send({type: 'GET'});
-    //});
+router.get('/ninjas',function(req,res){
+    res.send({type: 'GET'});
+});
     
 
 router.get('/ninjas/:id',function(req,res){
@@ -14,6 +14,7 @@ User.findOne({emailId: req.params.id}).then(function(user){
     res.send(user);
 });
 });
+
 
 router.get('/checkExistingUser/:id',function(req,res){
     User.findOne({emailId: req.params.id}).then(function(user){
